@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    <input type="text" id="ipPort" name="ipPort" value="127.0.0.1:8080">
+-->
+
+  <form th:object="${form}" th:method="post">
+    <!--*{...} : 선택 변수 식이라고 한다. th:object 에서 선택한 객체에 접근한다.-->
+    <!--field는 name, id, value 속성도 만들어준다.-->
+    th:field <input type="text" th:field="*{ipPort}"><br/> <!--th:field에 용도는 ${{ipPort}}를 안써도 컨버터 적용된다.-->
+    th:value  <input type="text" th:value="*{ipPort}"> (보여주기 용도)<br/>  <!--th:value는 컨버터 적용이 되지 않아서 주소를 보여준다.-->
+    <input type="submit">
+  </form>
+</body>
+</html>

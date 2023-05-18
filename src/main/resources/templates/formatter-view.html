@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>${form.number}: <span th:text="${form.number}" ></span></li>
+    <li>${{form.number}}: <span th:text="${{form.number}}" ></span></li>
+    <li>${form.localDateTime}: <span th:text="${form.localDateTime}" ></span></li>
+    <li>${{form.localDateTime}}: <span th:text="${{form.localDateTime}}" ></span></li>
+</ul>
+
+
+<pre>
+
+    ${form.number}: 10000
+    ${{form.number}}: 10,000                     <-- 지정한 포맷터로 변환
+    ${form.localDateTime}: 2023-05-18T13:31:58
+    ${{form.localDateTime}}: 2023-05-18 13:31:58 <-- 지정한 포맷터로 변환
+
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>${number} : <span th:text="${number}"></span></li>
+        <li>${{number}} : <span th:text="${{number}}"></span></li>
+        <li>${ipPort} : <span th:text="${ipPort}"></span></li>
+        <li>${{ipPort}} : <span th:text="${{ipPort}}"></span></li>
+
+        <br/>
+        <pre>
+        ==========================(컨버터)결과===========================
+        ${ipPort} : hello.typeConverter.type.IpPort@59cb0946 <-- ${} 컨버터 적용안됨
+
+        ${{ipPort}} : 127.0.0.1:8080 <-- ${{}} 컨버터 적용됨.
+        </pre>
+
+        <br/>
+        <pre>
+        ==========================(포맷터)결과===========================
+        ${number} : 10000
+        ${{number}} : 10,000 <-- 1000단위 ,(쉼표)
+            </pre>
+
+    </ul>
+</body>
+</html>
